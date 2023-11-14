@@ -16,7 +16,7 @@ app.get('/hello', (req, res) => {
 })
 
 app.post('/ask', (req, res) => {
-    user.find({name: req.body.name, age: req.body.age})
+    user.find({name: req.body.username, password: req.body.password})
     .then((result) => {
         if(result.length == 0){ throw error }
         res.send({'result': result})
